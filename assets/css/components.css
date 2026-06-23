@@ -1,0 +1,318 @@
+/* assets/css/components.css */
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--bg-card-solid);
+  box-shadow: 0 4px 12px hsla(var(--primary-hue), var(--primary-sat), 38%, 0.25);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px hsla(var(--primary-hue), var(--primary-sat), 38%, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Shimmer overlay effect for primary buttons */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.btn-primary:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+.btn-secondary {
+  background-color: var(--bg-card-solid);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+/* FEATURE CARDS */
+.feature-card {
+  background-color: var(--bg-card-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-glow);
+}
+
+.feature-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--primary);
+  transition: all var(--transition-normal);
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  background-color: var(--primary);
+  color: var(--bg-card-solid);
+  transform: rotate(6deg) scale(1.05);
+  box-shadow: 0 8px 16px hsla(var(--primary-hue), var(--primary-sat), 38%, 0.2);
+}
+
+.feature-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* STEP CARDS */
+.step-number-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--primary-glow);
+  background-color: var(--bg-card-solid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-icon-wrapper {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-pill);
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--primary);
+  border: 1px solid var(--primary-glow);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.step-card:hover .step-icon-wrapper {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+  background-color: var(--primary);
+  color: var(--bg-card-solid);
+}
+
+.step-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* ROLE SELECTOR CARDS */
+.role-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card-solid);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.role-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-top-left-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-lg);
+  background-color: transparent;
+  transition: var(--transition-fast);
+}
+
+.role-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.role-card-user .role-icon-wrapper {
+  background-color: var(--color-user-bg);
+  color: var(--color-user);
+}
+.role-card-manager .role-icon-wrapper {
+  background-color: var(--color-manager-bg);
+  color: var(--color-manager);
+}
+.role-card-admin .role-icon-wrapper {
+  background-color: var(--color-admin-bg);
+  color: var(--color-admin);
+}
+
+.role-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  transition: var(--transition-fast);
+}
+
+.role-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Active Roles styling */
+.role-card.active-user {
+  border-color: var(--color-user);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card-solid);
+}
+.role-card.active-user::after {
+  background-color: var(--color-user);
+}
+
+.role-card.active-manager {
+  border-color: var(--color-manager);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card-solid);
+}
+.role-card.active-manager::after {
+  background-color: var(--color-manager);
+}
+
+.role-card.active-admin {
+  border-color: var(--color-admin);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card-solid);
+}
+.role-card.active-admin::after {
+  background-color: var(--color-admin);
+}
+
+/* GLOW DOTS background decoration */
+.dot-grid {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-image: radial-gradient(var(--primary-glow) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.dot-grid-hero-left {
+  top: 15%;
+  left: 5%;
+}
+
+.dot-grid-hero-right {
+  bottom: 25%;
+  right: 50%;
+  z-index: 0;
+}

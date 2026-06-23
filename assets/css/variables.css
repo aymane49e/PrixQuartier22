@@ -1,0 +1,77 @@
+/* assets/css/variables.css */
+
+:root {
+  /* Color System - Emerald & Slate Theme */
+  --primary-hue: 156;
+  --primary-sat: 72%;
+  
+  --primary: hsl(var(--primary-hue), var(--primary-sat), 38%);
+  --primary-hover: hsl(var(--primary-hue), var(--primary-sat), 32%);
+  --primary-active: hsl(var(--primary-hue), var(--primary-sat), 25%);
+  --primary-light: hsl(var(--primary-hue), var(--primary-sat), 96%);
+  --primary-light-hover: hsl(var(--primary-hue), var(--primary-sat), 92%);
+  --primary-glow: hsla(var(--primary-hue), var(--primary-sat), 38%, 0.15);
+  
+  /* Secondary / Accent Colors */
+  --accent: hsl(142, 76%, 45%);
+  --accent-light: hsl(142, 76%, 95%);
+  --accent-glow: rgba(16, 185, 129, 0.2);
+  
+  /* Role-based Colors */
+  --color-user: hsl(150, 72%, 38%);
+  --color-user-bg: hsl(150, 72%, 96%);
+  --color-user-glow: rgba(16, 185, 129, 0.15);
+  
+  --color-manager: hsl(217, 91%, 56%);
+  --color-manager-bg: hsl(217, 91%, 96%);
+  --color-manager-glow: rgba(59, 130, 246, 0.15);
+  
+  --color-admin: hsl(271, 91%, 65%);
+  --color-admin-bg: hsl(271, 91%, 96%);
+  --color-admin-glow: rgba(168, 85, 247, 0.15);
+
+  --color-danger: hsl(350, 89%, 60%);
+  --color-danger-bg: hsl(350, 89%, 96%);
+  
+  /* Neutral Colors */
+  --text-dark: hsl(222, 47%, 11%);
+  --text-main: hsl(220, 20%, 25%);
+  --text-muted: hsl(220, 14%, 48%);
+  --text-light: hsl(220, 16%, 96%);
+  
+  --bg-main: hsl(220, 30%, 98%);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-solid: hsl(0, 0%, 100%);
+  --border-color: hsl(220, 20%, 92%);
+  --border-light: rgba(255, 255, 255, 0.6);
+  
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Elevations & Shadows */
+  --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 24px 48px -8px rgba(15, 23, 42, 0.12), 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  --shadow-glow: 0 0 20px 0 hsla(var(--primary-hue), var(--primary-sat), 38%, 0.2);
+  --shadow-inner: inset 0 2px 4px 0 rgba(15, 23, 42, 0.06);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px);
+  
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+}

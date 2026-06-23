@@ -1,0 +1,284 @@
+/* src/index.css */
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Variables - Emerald & Slate Theme */
+  --primary-hue: 156;
+  --primary-sat: 72%;
+  
+  --primary: hsl(var(--primary-hue), var(--primary-sat), 38%);
+  --primary-hover: hsl(var(--primary-hue), var(--primary-sat), 32%);
+  --primary-active: hsl(var(--primary-hue), var(--primary-sat), 25%);
+  --primary-light: hsl(var(--primary-hue), var(--primary-sat), 96%);
+  --primary-light-hover: hsl(var(--primary-hue), var(--primary-sat), 92%);
+  --primary-glow: hsla(var(--primary-hue), var(--primary-sat), 38%, 0.15);
+  
+  --accent: hsl(142, 76%, 45%);
+  --accent-light: hsl(142, 76%, 95%);
+  
+  --color-user: hsl(150, 72%, 38%);
+  --color-user-bg: hsl(150, 72%, 96%);
+  
+  --color-manager: hsl(217, 91%, 56%);
+  --color-manager-bg: hsl(217, 91%, 96%);
+  
+  --color-admin: hsl(271, 91%, 65%);
+  --color-admin-bg: hsl(271, 91%, 96%);
+  --color-admin-glow: rgba(168, 85, 247, 0.15);
+
+  --color-danger: hsl(350, 89%, 60%);
+  --color-danger-bg: hsl(350, 89%, 96%);
+  
+  --text-dark: hsl(222, 47%, 11%);
+  --text-main: hsl(220, 20%, 25%);
+  --text-muted: hsl(220, 14%, 48%);
+  --text-light: hsl(220, 16%, 96%);
+  
+  --bg-main: hsl(220, 30%, 98%);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-solid: hsl(0, 0%, 100%);
+  --border-color: hsl(220, 20%, 92%);
+  
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 24px 48px -8px rgba(15, 23, 42, 0.12), 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  --shadow-glow: 0 0 20px 0 hsla(var(--primary-hue), var(--primary-sat), 38%, 0.2);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px);
+  
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary-hue), 20%, 80%);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.donut-segment-draw {
+  animation: drawDonut 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes drawDonut {
+  from {
+    stroke-dasharray: 0 100;
+  }
+}
+
+/* Global utility layouts */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-main);
+}
+
+.dashboard-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  padding: 32px;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--bg-card-solid);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  animation: modalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalScale {
+  from {
+    transform: scale(0.9) translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Interactive tables */
+.table-container {
+  background-color: var(--bg-card-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: var(--bg-main);
+  padding: 14px 18px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table td {
+  padding: 14px 18px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background-color: var(--primary-light);
+}
+
+/* Status Badges */
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-pending {
+  background-color: hsl(45, 100%, 95%);
+  color: hsl(45, 100%, 35%);
+}
+
+.badge-approved {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-rejected {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}

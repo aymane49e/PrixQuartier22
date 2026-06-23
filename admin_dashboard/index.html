@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>PrixQuartier - Partagez les prix et économisez ensemble</title>
+  <meta name="description" content="Partagez les prix dans votre quartier, aidez votre communauté à mieux consommer. PrixQuartier est une plateforme collaborative de prix alimentaires locaux.">
+  <meta name="keywords" content="prix, alimentation, courses, quartier, maroc, collaboratif, economie, budget, comparateur">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/phone-mockup.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVIGATION -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="#" class="logo" id="header-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span>PrixQuartier</span>
+      </a>
+      
+      <nav class="nav" id="main-nav">
+        <a href="#accueil" class="nav-link active" id="nav-accueil">Accueil</a>
+        <a href="#fonctionnalites" class="nav-link" id="nav-fonctionnalites">Fonctionnalités</a>
+        <a href="#comment-ca-marche" class="nav-link" id="nav-comment">Comment ça marche</a>
+        <a href="#a-propos" class="nav-link" id="nav-apropos">À propos</a>
+        <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="lang-selector" id="lang-selector" aria-haspopup="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>FR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        
+        <a href="/admin.html" class="btn btn-primary btn-sm" id="btn-login-header">Se connecter</a>
+        
+        <div class="menu-toggle" id="menu-toggle" aria-label="Menu principal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="section hero" id="accueil">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="hero-badge">Partagez. Comparez. Économisez.</span>
+        <h1 class="hero-title">Partagez les prix dans votre quartier, aidez votre communauté à <span>mieux consommer</span>.</h1>
+        <p class="hero-description">PrixQuartier est une plateforme collaborative qui vous permet de partager et consulter les prix des produits alimentaires dans votre quartier ou votre ville.</p>
+        
+        <div class="hero-cta">
+          <a href="#comment-ca-marche" class="btn btn-primary shimmer-bg" id="hero-discover-btn">Découvrir les prix</a>
+          <button class="btn btn-secondary" id="hero-add-price-btn">Ajouter un prix</button>
+        </div>
+        
+        <div class="hero-social-proof">
+          <div class="avatar-group">
+            <!-- First User Avatar -->
+            <img src="assets/img/avatars/user1.png" alt="Utilisateur de PrixQuartier" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="avatar-fallback" style="display:none; background-color:#10b981; color:#fff;">S</span>
+            
+            <!-- Second User Avatar -->
+            <img src="assets/img/avatars/user2.png" alt="Utilisateur de PrixQuartier" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="avatar-fallback" style="display:none; background-color:#3b82f6; color:#fff;">A</span>
+            
+            <!-- Third User Avatar (Simulated) -->
+            <span class="avatar-fallback" style="background-color:#8b5cf6; color:#fff;">Y</span>
+            <!-- Fourth User Avatar (Simulated) -->
+            <span class="avatar-fallback" style="background-color:#ec4899; color:#fff;">M</span>
+          </div>
+          <span class="social-proof-text">Rejoignez des milliers d'utilisateurs qui partagent chaque jour.</span>
+        </div>
+      </div>
+
+      <!-- Smartphone Simulator Mockup (Float animation) -->
+      <div class="phone-mockup-wrapper float-animation reveal reveal-delay-2">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          
+          <div class="phone-screen">
+            <!-- Success Toast Notification -->
+            <div class="phone-toast" id="phone-success-toast">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="phone-toast-text">Prix ajouté avec succès !</span>
+            </div>
+
+            <!-- StatusBar -->
+            <div class="phone-statusbar">
+              <span>9:41</span>
+              <div class="statusbar-icons">
+                <svg class="statusbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h.01M8 16h.01M5 12h.01M19 12h.01M16 16h.01M12 12h.01M8 8h.01M16 8h.01M12 4h.01"></path>
+                </svg>
+                <svg class="statusbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect>
+                  <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- App Body inside Phone -->
+            <div class="phone-content">
+              <div class="phone-app-header">
+                <h3 class="phone-greeting">Bonjour 👋</h3>
+                <p class="phone-subtitle">Où faites-vous vos courses aujourd'hui ?</p>
+              </div>
+              
+              <div class="phone-search-container">
+                <svg class="phone-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="phone-search-input" placeholder="Rechercher un produit..." aria-label="Recherche de produit">
+                
+                <!-- Autocomplete Dropdown List -->
+                <div class="phone-search-results"></div>
+              </div>
+              
+              <div class="phone-location-bar">
+                <div class="phone-location-info">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Casablanca, Maarif</span>
+                </div>
+                <span class="phone-location-change">Changer</span>
+              </div>
+              
+              <!-- Popular Products inside Phone -->
+              <div class="phone-section">
+                <div class="phone-section-title-row">
+                  <span class="phone-sec-title">Produits populaires</span>
+                  <a href="#" class="phone-sec-link">Voir tout</a>
+                </div>
+                
+                <div class="phone-products-grid">
+                  <!-- Product 1: Tomate -->
+                  <div class="phone-product-card" data-product="tomato">
+                    <div class="phone-product-image-container">
+                      <img src="assets/img/products/tomato.png" alt="Tomate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <span class="phone-product-image-fallback" style="display:none;">🍅</span>
+                    </div>
+                    <span class="phone-product-name">Tomate</span>
+                    <span class="phone-product-price">5,90 MAD/kg</span>
+                    <span class="phone-trend-badge phone-trend-down">- 2%</span>
+                  </div>
+                  
+                  <!-- Product 2: Pomme de terre -->
+                  <div class="phone-product-card" data-product="potato">
+                    <div class="phone-product-image-container">
+                      <img src="assets/img/products/potato.png" alt="Pomme de terre" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <span class="phone-product-image-fallback" style="display:none;">🥔</span>
+                    </div>
+                    <span class="phone-product-name">Pomme de terre</span>
+                    <span class="phone-product-price">3,20 MAD/kg</span>
+                    <span class="phone-trend-badge phone-trend-up">+ 5%</span>
+                  </div>
+                  
+                  <!-- Product 3: Oignon -->
+                  <div class="phone-product-card" data-product="onion">
+                    <div class="phone-product-image-container">
+                      <img src="assets/img/products/onion.png" alt="Oignon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <span class="phone-product-image-fallback" style="display:none;">🧅</span>
+                    </div>
+                    <span class="phone-product-name">Oignon</span>
+                    <span class="phone-product-price">4,10 MAD/kg</span>
+                    <span class="phone-trend-badge phone-trend-down">- 1%</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Recent Prices inside Phone -->
+              <div class="phone-section">
+                <div class="phone-section-title-row">
+                  <span class="phone-sec-title">Prix récents dans votre quartier</span>
+                </div>
+                
+                <div class="phone-prices-list">
+                  <div class="phone-price-item">
+                    <div class="phone-price-item-left">
+                      <div class="phone-price-item-img">
+                        <img src="assets/img/products/tomato.png" alt="Tomate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="emoji-fallback" style="display:none;">🍅</span>
+                      </div>
+                      <div class="phone-price-item-details">
+                        <span class="phone-price-item-name">Tomate</span>
+                        <span class="phone-price-item-store">Auchan Maarif</span>
+                      </div>
+                    </div>
+                    <div class="phone-price-item-right">
+                      <span class="phone-price-item-val">5,50 MAD/kg</span>
+                      <span class="phone-price-item-time">Aujourd'hui</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Phone Modal Form (Add Price Form overlay) -->
+            <div class="phone-modal-overlay" id="phone-add-price-overlay">
+              <div class="phone-modal">
+                <div class="phone-modal-header">
+                  <span class="phone-modal-title">Contribuer un prix 🏷️</span>
+                  <span class="phone-modal-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </span>
+                </div>
+                
+                <form class="phone-modal-form" id="phone-add-price-form">
+                  <div class="phone-form-group">
+                    <label for="phone-form-product">Produit</label>
+                    <select id="phone-form-product" class="phone-form-select">
+                      <option value="tomato">Tomate</option>
+                      <option value="potato">Pomme de terre</option>
+                      <option value="onion">Oignon</option>
+                      <option value="oil">Huile d'olive</option>
+                      <option value="carrot">Carotte</option>
+                    </select>
+                  </div>
+                  
+                  <div class="phone-form-group">
+                    <label for="phone-form-store">Magasin / Épicier</label>
+                    <input type="text" id="phone-form-store" class="phone-form-input" placeholder="ex: Carrefour Maarif, Marjane, Bim" required>
+                  </div>
+                  
+                  <div class="phone-form-group">
+                    <label for="phone-form-price">Prix (MAD / kg ou L)</label>
+                    <input type="number" id="phone-form-price" class="phone-form-input" placeholder="ex: 5.50" step="0.01" required>
+                  </div>
+                  
+                  <button type="submit" class="phone-submit-btn">Partager le prix</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Bottom Navigation inside Phone -->
+            <div class="phone-nav-bar">
+              <div class="phone-nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Accueil</span>
+              </div>
+              <div class="phone-nav-item" id="phone-nav-add">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="16"></line>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                <span>Ajouter</span>
+              </div>
+              <div class="phone-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Profil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dot Grid Decoration on Phone Section -->
+        <div class="dot-grid dot-grid-hero-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES SECTION -->
+  <section class="section section-bg-light" id="fonctionnalites">
+    <!-- Dot Grid Decoration Left -->
+    <div class="dot-grid dot-grid-hero-left"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Avantages</span>
+        <h2 class="section-title">Une solution complète pour consommer malin</h2>
+        <p class="section-subtitle">Découvrez comment PrixQuartier simplifie vos courses quotidiennes tout en créant du lien social dans votre communauté.</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Prix par quartier</h3>
+          <p>Consultez les prix partagés dans votre quartier ou votre ville pour trouver les meilleures affaires à proximité.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Communauté</h3>
+          <p>Partagez les prix et aidez votre communauté à mieux consommer en devenant un consommateur actif.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <h3>Ajoutez facilement</h3>
+          <p>Ajoutez le prix d'un produit en quelques secondes seulement via notre formulaire mobile simple et rapide.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 11 11 13 15 9"></polyline>
+            </svg>
+          </div>
+          <h3>Produits validés</h3>
+          <p>Les nouveaux produits sont validés par nos équipes de modération pour garantir la qualité de la base de données.</p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Suivi des prix</h3>
+          <p>Suivez l'évolution des prix dans le temps et faites les meilleurs choix d'achats en période d'inflation.</p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>Sécurisé</h3>
+          <p>Vos données personnelles sont protégées, chiffrées et votre vie privée est rigoureusement respectée.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. STATS SECTION -->
+  <section class="section stats" id="stats">
+    <div class="container">
+      <div class="stats-card reveal">
+        <!-- Stat Item 1 -->
+        <div class="stat-item">
+          <span class="stat-number">12K+</span>
+          <span class="stat-label">Utilisateurs actifs</span>
+        </div>
+        <!-- Stat Item 2 -->
+        <div class="stat-item">
+          <span class="stat-number">5K+</span>
+          <span class="stat-label">Prix partagés</span>
+        </div>
+        <!-- Stat Item 3 -->
+        <div class="stat-item">
+          <span class="stat-number">800+</span>
+          <span class="stat-label">Produits disponibles</span>
+        </div>
+        <!-- Stat Item 4 -->
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Quartiers couverts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW IT WORKS SECTION -->
+  <section class="section" id="comment-ca-marche">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Fonctionnement</span>
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-subtitle">Quatre étapes simples pour commencer à comparer et économiser dès aujourd'hui.</p>
+      </div>
+      
+      <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-card reveal">
+          <span class="step-number-badge">1</span>
+          <div class="step-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Choisissez votre quartier</h3>
+          <p>Activez votre localisation ou sélectionnez manuellement votre quartier ou ville.</p>
+          
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="step-card reveal reveal-delay-1">
+          <span class="step-number-badge">2</span>
+          <div class="step-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <h3>Recherchez un produit</h3>
+          <p>Trouvez un produit existant ou proposez-en un nouveau si nécessaire.</p>
+          
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="step-card reveal reveal-delay-2">
+          <span class="step-number-badge">3</span>
+          <div class="step-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+          </div>
+          <h3>Ajoutez le prix</h3>
+          <p>Renseignez le prix, le magasin et partagez instantanément avec la communauté.</p>
+          
+          <div class="step-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="step-card reveal reveal-delay-3">
+          <span class="step-number-badge">4</span>
+          <div class="step-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Aidez votre communauté</h3>
+          <p>Vos informations aident les autres à mieux acheter et à économiser au quotidien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTERACTIVE ROLES & DASHBOARD SECTION -->
+  <section class="section section-bg-light" id="a-propos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Rôles & Tableau de bord</span>
+        <h2 class="section-title">Une plateforme complète pour tous les rôles</h2>
+        <p class="section-subtitle">Chaque acteur dispose d'un espace optimisé pour contribuer, modérer ou administrer la plateforme. Cliquez sur un rôle pour simuler son interface.</p>
+      </div>
+      
+      <div class="roles-dashboard-grid">
+        <!-- Left Role Cards list -->
+        <div class="roles-list reveal">
+          <!-- Role 1: Utilisateurs -->
+          <div class="role-card role-card-user" data-role="user" id="role-card-user" tabindex="0">
+            <div class="role-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Utilisateurs</h3>
+              <p>Partagez, consultez et suivez les prix des produits alimentaires de votre quartier.</p>
+            </div>
+          </div>
+          
+          <!-- Role 2: Gestionnaires -->
+          <div class="role-card role-card-manager" data-role="manager" id="role-card-manager" tabindex="0">
+            <div class="role-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 11 11 13 15 9"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3>Gestionnaires</h3>
+              <p>Validez les nouveaux produits, vérifiez la cohérence et modérez les contributions.</p>
+            </div>
+          </div>
+          
+          <!-- Role 3: Administrateurs -->
+          <div class="role-card role-card-admin" data-role="admin" id="role-card-admin" tabindex="0">
+            <div class="role-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="9" width="18" height="12" rx="2" ry="2"></rect>
+                <path d="M16 5V3a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                <line x1="12" y1="13" x2="12" y2="17"></line>
+                <circle cx="12" cy="15" r="1"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3>Administrateurs</h3>
+              <p>Gérez les utilisateurs globaux, configurez les produits et accédez aux statistiques clés.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Interactive Desktop Dashboard Simulator Mockup -->
+        <div class="dashboard-mockup-wrapper reveal reveal-delay-2">
+          <!-- Sidebar -->
+          <aside class="dash-sidebar">
+            <div class="dash-logo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              <span>PrixQuartier</span>
+            </div>
+            
+            <div class="dash-menu">
+              <div class="dash-menu-item active" id="menu-item-dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Tableau de bord</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span>Produits</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span>Contributions</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Utilisateurs</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 11 11 13 15 9"></polyline>
+                </svg>
+                <span>Gestionnaires</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Statistiques</span>
+              </div>
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Paramètres</span>
+              </div>
+            </div>
+            
+            <div class="dash-logout">
+              <div class="dash-menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Déconnexion</span>
+              </div>
+            </div>
+          </aside>
+          
+          <!-- Main Content Dashboard -->
+          <main class="dash-main">
+            <header class="dash-header">
+              <h3 class="dash-title">Tableau de bord</h3>
+            </header>
+            
+            <!-- KPIs row -->
+            <div class="dash-kpis-grid">
+              <!-- KPI Cards are dynamically injected by dashboard.js -->
+            </div>
+            
+            <!-- Charts Section -->
+            <div class="dash-charts-grid">
+              <!-- Left Chart: Line Chart -->
+              <div class="dash-chart-card">
+                <header class="dash-chart-header">
+                  <span class="dash-chart-title">Evolution de prix</span>
+                  <div class="dash-chart-select">
+                    <span>Semestre</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </header>
+                <div class="dash-chart-body" id="dash-line-chart-body">
+                  <!-- Injected via SVG inside dashboard.js -->
+                </div>
+              </div>
+              
+              <!-- Right Chart: Donut Chart -->
+              <div class="dash-chart-card">
+                <header class="dash-chart-header">
+                  <span class="dash-chart-title">Produits consultés</span>
+                  <div class="dash-chart-select">
+                    <span>Tous</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </header>
+                <div class="dash-chart-body" id="dash-donut-chart-body">
+                  <!-- Injected via SVG inside dashboard.js -->
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER SECTION -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>PrixQuartier</span>
+        </a>
+        <p class="footer-desc">Une plateforme citoyenne collaborative pour lutter ensemble contre l'inflation en favorisant la transparence des prix alimentaires.</p>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">Plateforme</h4>
+        <div class="footer-links">
+          <a href="#accueil" class="footer-link">Accueil</a>
+          <a href="#fonctionnalites" class="footer-link">Fonctionnalités</a>
+          <a href="#comment-ca-marche" class="footer-link">Comment ça marche</a>
+          <a href="#a-propos" class="footer-link">Rôles</a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">Communauté</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Charte citoyenne</a>
+          <a href="#" class="footer-link">Devenir modérateur</a>
+          <a href="#" class="footer-link">Partenaires locaux</a>
+          <a href="#" class="footer-link">Blog & Conseils</a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">Contact</h4>
+        <div class="footer-links">
+          <span class="footer-link" style="cursor:default;">support@prixquartier.ma</span>
+          <span class="footer-link" style="cursor:default;">Casablanca, Maroc</span>
+          <a href="#" class="footer-link">Conditions d'utilisation</a>
+          <a href="#" class="footer-link">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span>&copy; 2026 PrixQuartier. Tous droits réservés. Développé pour la communauté.</span>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-icon" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+          </svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/phone.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
