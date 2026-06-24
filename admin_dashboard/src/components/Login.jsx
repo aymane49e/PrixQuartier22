@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { requestPasswordReset, verifyOtp, getUserIdByEmail, updatePasswordAdmin } from '../data/services/authService';
-import { ShoppingBag, Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { ShoppingBag, Eye, EyeOff, AlertCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 
 export const Login = () => {
   const { login, register } = useAuth();
@@ -108,13 +108,28 @@ export const Login = () => {
             </div>
           )}
 
-          <button type="submit" disabled={submitting} style={{ width: '100%', backgroundColor: 'var(--primary)', color: '#fff', fontWeight: 700, padding: '14px', borderRadius: '12px', border: 'none', marginTop: '10px' }} className="btn-primary">
-            {submitting ? 'En cours...' : (mode === 'forgot' ? 'Envoyer le code' : mode === 'verify' ? 'Vérifier' : mode === 'reset' ? 'Mettre à jour' : mode === 'login' ? 'Se connecter' : 'Créer mon compte')}
+         <button type="submit" disabled={submitting} style={{ width: '100%', backgroundColor: 'var(--primary)', color: '#fff', fontWeight: 700, padding: '14px', borderRadius: '12px', border: 'none', marginTop: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }} className="btn-primary">
+            {submitting ? 'En cours...' : (
+              mode === 'forgot' ? 'Envoyer le code' :
+              mode === 'verify' ? 'Vérifier' :
+              mode === 'reset' ? 'Mettre à jour' :
+              mode === 'login' ? (
+                <>
+                  <span>Se connecter</span>
+                  <ArrowRight width="20" height="20" /> 
+                </>
+              ) : 'Créer mon compte'
+            )}
           </button>
-
+          
           {(mode === 'forgot' || mode === 'verify' || mode === 'reset') && (
-            <button type="button" onClick={() => setMode('login')} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.8rem', cursor: 'pointer' }}>Retour à la connexion</button>
+            <button type="button" onClick={() => setMode('login')} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.8rem', cursor: 'pointer' }}>Retour à la connexion </button>
           )}
+          
+          <button type="button" onClick={() => window.location.href = '/'} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.85rem', cursor: 'pointer', marginTop: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <ArrowLeft width="16" height="16" />
+            <span>Retour à l'accueil</span>
+          </button>
         </form>
       </div>
     </div>
